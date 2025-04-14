@@ -24,6 +24,10 @@
             android:exported="false">
         </activity>
         <activity
+            android:name=".ViewProfileActivity"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
 

@@ -1,5 +1,7 @@
 package com.example.videoshort_firebase;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +61,15 @@ public class VideosFireBaseAdapter extends FirebaseRecyclerAdapter<VideoModel, V
                 holder.dislike.setImageResource(R.drawable.ic_dislike);
                 isFav = false;
             }
+        });
+        holder.imPerson.setOnClickListener(v -> {
+            Context context = holder.itemView.getContext();
+            Intent intent = new Intent(context, ViewProfileActivity.class);
+
+            // Optional: gửi email hoặc ID người đăng để xem thông tin người đó
+            intent.putExtra("email", model.getUserEmail());
+
+            context.startActivity(intent);
         });
     }
 
